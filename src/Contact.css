@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.enroll-section {
+  background-image: url(./assets/unnamed.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 83.7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.enroll-section h2 {
+  text-align: center;
+  color: #242424;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.enroll-form {
+  background: #fff;
+  width: 90%;
+  max-width: 520px;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+.enroll-form input,
+.enroll-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border: 1px solid #aca8a8;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+}
+
+.enroll-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.enroll-form button {
+  background: rgb(0, 161, 153);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.enroll-form button:hover {
+  background-color: #ff800000;
+  color: rgb(0, 161, 153);
+  border: 3px solid  rgb(0, 161, 153);
+}
+
+/* ----- Responsive Breakpoints ----- */
+
+/* Tablets and small laptops */
+@media (max-width: 992px) {
+  .enroll-section h2 {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+  .enroll-form {
+    padding: 25px 20px;
+  }
+}
+
+/* Large phones and portrait tablets */
+@media (max-width: 768px) {
+  .enroll-section {
+    padding: 15px;
+    height: auto;
+  }
+  .enroll-section h2 {
+    font-size: 26px;
+  }
+  .enroll-form {
+    width: 95%;
+    padding: 20px 18px;
+  }
+  .enroll-form input,
+  .enroll-form textarea {
+    font-size: 15px;
+  }
+  .enroll-form button {
+    font-size: 16px;
+    padding: 10px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .enroll-section h2 {
+    font-size: 22px;
+  }
+  .enroll-form {
+    width: 100%;
+    padding: 18px 15px;
+  }
+  .enroll-form input,
+  .enroll-form textarea {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+  .enroll-form button {
+    font-size: 15px;
+    padding: 10px;
+  }
+}

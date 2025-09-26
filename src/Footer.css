@@ -1,0 +1,165 @@
+.footer {
+  background-color: #00274ff5;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-section {
+  flex: 1 1 220px;
+  min-width: 220px;
+}
+
+.logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-logo {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.slogan {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.footer-section h4 {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.footer-links,
+.sub-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.sub-links {
+  padding-left: 15px;
+  margin-top: 5px;
+}
+
+.footer-section p {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.footer-section i {
+  margin-right: 8px;
+  color: #00bfff;
+  min-width: 16px;
+  text-align: center;
+}
+
+.quote-btn {
+  display: inline-block;
+  background-color:rgb(0, 161, 153);
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-top: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.quote-btn:hover {
+  background-color:#ffffff00;
+  border: 2px solid #ffffff;
+  color:#ffffff;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  font-size: 1.1rem;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #00bfff;
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  border-top: 1px solid #ffffff;
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: #ffffff;
+}
+
+.legal-links {
+  display: flex;
+  gap: 15px;
+}
+
+.legal-links a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.legal-links a:hover {
+  text-decoration: underline;
+}
+
+hr{
+  background-color: white;
+}
+
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-section {
+    width: 100%;
+    margin-top: 0%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .legal-links {
+    justify-content: center;
+  }
+}

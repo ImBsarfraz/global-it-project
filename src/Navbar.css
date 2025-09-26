@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color:#195569f5;
+  color: white;
+  padding: 20px;
+  flex-wrap: nowrap;
+}
+
+.brand h2 {
+  font-size: 28px;
+  margin-left: 25px;
+}
+
+.enquiry {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.enquiry img {
+  height: 30px;
+}
+
+.enquiry_txt h3,
+.enquiry_txt h4 {
+  font-size: 19px;
+  margin: 0;
+}
+
+.enquiry button {
+  padding: 8px 12px;
+  border: 3px solid #fff;
+  background: transparent;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 20px;
+  margin-right: 25px;
+  font-weight: 700;
+}
+
+.enquiry button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar {
+  background-color:rgb(0, 0, 0);
+  padding: 20px;
+  position: relative; /* added for dropdown positioning */
+  height: 60px;
+  display: flex;
+  
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  flex-wrap: nowrap;
+}
+
+.nav-links li {
+  font-size: 17px;
+  position: relative;
+  
+}
+
+.link {
+  text-decoration: none !important;
+  color: white;
+}
+
+.link_menu{
+    text-decoration: none !important;
+    color: rgb(0, 0, 0);
+    font-family: Arial;
+}
+.link:hover,
+.link:focus,
+.link:active {
+  text-decoration: none !important;
+  color: #0051ff;
+}
+
+.link a{
+  text-decoration: none;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-family: Arial;
+  cursor: pointer;
+}
+
+.dropdown-btn:hover {
+  color: #0051ff;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background: white;
+  color: black;
+  list-style: none;
+  padding: 10px 0;
+  width: 450px;
+  border-radius: 4px;
+  display: none;
+  z-index: 20;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.dropdown-menu {
+  display: none;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-menu li {
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f5f5f5;
+}
+
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  margin-left: auto;
+  z-index: 20; /* so it's above nav-links */
+}
+
+.bar {
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .brand {
+    flex-wrap: nowrap;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #ff9100;
+    width: 100%;
+    padding: 15px 20px;
+    position: absolute;
+    top: 50px; /* just below navbar */
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 0 0 8px 8px;
+    z-index: 15;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  .nav-links li:last-child {
+    margin-bottom: 0;
+  }
+
+  .enquiry_txt h3,
+  .enquiry_txt h4 {
+    display: none;
+  }
+
+  .enquiry button {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+}
