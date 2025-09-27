@@ -1,12 +1,10 @@
 import React, { useRef, useState } from "react";
-
 import "./Home.css";
-import Testimonial from "./compontents/Testimoni"
+import Testimonial from "./compontents/Testimoni";
 import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 
-
-//images
+// images
 import cloud from "./assets/cloud_service.png";
 import Data from "./assets/data_service.png";
 import digital from "./assets/digital.png";
@@ -42,11 +40,8 @@ const Home = () => {
       title: "New Enquiry Request",
     };
 
-    console.log("Sending email with:", emailData);
-    console.log("Public Key:", import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY);
-
     try {
-      const result = await emailjs.send(
+      await emailjs.send(
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         emailData,
@@ -54,10 +49,9 @@ const Home = () => {
       );
 
       alert("Email sent successfully!");
-
       setForm({ name: "", email: "", message: "" });
     } catch (error) {
-      alert("Failed to send Enguiry. Please check the console for details.");
+      alert("Failed to send Enquiry. Please check the console for details.");
     }
   };
 
@@ -66,20 +60,19 @@ const Home = () => {
     {
       title: "Web Development",
       desc: "We create responsive, high-performance websites using modern technologies and best practices.",
-      icon: "💻"
+      icon: "💻",
     },
     {
       title: "Mobile App Development",
       desc: "Developing seamless, cross-platform mobile applications for iOS and Android devices.",
-      icon: "📱"
+      icon: "📱",
     },
     {
       title: "Cloud Solutions",
       desc: "Providing scalable, secure, and reliable cloud infrastructure and services tailored to your business.",
-      icon: "☁️"
+      icon: "☁️",
     },
   ];
-
 
   // Slides for the 1–6 buttons
   const slides = [
@@ -90,7 +83,7 @@ const Home = () => {
       point3: "✔️ Web Application Engineering",
       point4: "✔️ Enterprise Systems (ERP, CRM, SCM)",
       point5: "✔️ SaaS Platform Development",
-      text: "Global IT Services delivers tailored software applications that are reliable, scalable, and secure, designed to meet the unique needs of your business."
+      text: "Global IT Services delivers tailored software applications that are reliable, scalable, and secure, designed to meet the unique needs of your business.",
     },
     {
       img: Data,
@@ -99,7 +92,7 @@ const Home = () => {
       point3: "✔️ Big Data Engineering",
       point4: "✔️ Business Intelligence (BI) Solutions",
       point5: "✔️ Data Warehousing & Management",
-      text: "Global IT Services transforms raw data into actionable insights through analytics, modeling, and smart data management, empowering better business decisions."
+      text: "Global IT Services transforms raw data into actionable insights through analytics, modeling, and smart data management, empowering better business decisions.",
     },
     {
       img: cloud,
@@ -108,7 +101,7 @@ const Home = () => {
       point3: "✔️ Cloud Infrastructure Management & Monitoring",
       point4: "✔️ DevOps Automation & CI/CD Pipelines",
       point5: "✔️ Serverless Architecture & Deployment",
-      text: "Global IT Services provides scalable, secure, and efficient cloud platforms to build, migrate, and manage applications across diverse environments."
+      text: "Global IT Services provides scalable, secure, and efficient cloud platforms to build, migrate, and manage applications across diverse environments.",
     },
     {
       img: digital,
@@ -117,7 +110,7 @@ const Home = () => {
       point3: "✔️ Custom CMS Development",
       point4: "✔️ E-commerce Platform Development",
       point5: "✔️ SEO & Search Engine Optimization",
-      text: "Global IT Services enhances brand visibility and business growth through strategic digital marketing, robust CMS solutions, and optimized e-commerce platforms."
+      text: "Global IT Services enhances brand visibility and business growth through strategic digital marketing, robust CMS solutions, and optimized e-commerce platforms.",
     },
     {
       img: security,
@@ -126,7 +119,7 @@ const Home = () => {
       point3: "✔️ Network & Cloud Security",
       point4: "✔️ Compliance & Data Protection",
       point5: "✔️ Security Consulting & Training",
-      text: "Global IT Services safeguards your digital assets by identifying risks, implementing protective measures, and ensuring compliance with industry standards."
+      text: "Global IT Services safeguards your digital assets by identifying risks, implementing protective measures, and ensuring compliance with industry standards.",
     },
     {
       img: ai,
@@ -135,11 +128,9 @@ const Home = () => {
       point3: "✔️ Natural Language Processing (NLP)",
       point4: "✔️ Predictive Analytics & Automation",
       point5: "✔️ AI-driven Business Insights",
-      text: "Global IT Services leverages AI and machine learning to automate processes, predict trends, and generate actionable insights that drive smarter business decisions."
+      text: "Global IT Services leverages AI and machine learning to automate processes, predict trends, and generate actionable insights that drive smarter business decisions.",
     },
   ];
-
-
 
   // Track which slide is active
   const [active, setActive] = useState(0);
@@ -151,14 +142,12 @@ const Home = () => {
         <div className="header_overlay">
           <h2>Software Development</h2>
           <p>
-            Software development involves designing, building, and maintaining applications
-            and systems to solve real-world problems.
-            <br />
-            It requires a combination of programming skills, problem-solving, and collaboration
-            to create efficient and scalable software solutions.
+            Software development involves designing, building, and maintaining
+            applications and systems to solve real-world problems.
           </p>
-
-          <Link to="/Contact"><button className="header_btn">Explore now !</button></Link>
+          <Link to="/Contact">
+            <button className="header_btn">Explore now !</button>
+          </Link>
         </div>
       </div>
 
@@ -167,21 +156,43 @@ const Home = () => {
         <div className="intro">
           <h2 className="text-info">Features -</h2>
           <p>
-            Global IT Services is a software company dedicated to delivering innovative, user-friendly solutions using cutting-edge technology. We focus on quality, agility, and custom software development to help businesses enhance efficiency, streamline operations, and drive growth.
+            Global IT Services is a software company dedicated to delivering
+            innovative, user-friendly solutions using cutting-edge technology.
           </p>
         </div>
 
         <div className="content container">
           <div className="scroll-features">
             {[
-              { icon: "⚡", title: "Speedy Service", description: "We deliver fast and efficient solutions to meet your business needs without compromising quality." },
-              { icon: "🎯", title: "Targeted Support", description: "Our team provides precise and personalized support to help you achieve your goals effectively." },
-              { icon: "💡", title: "Bright Ideas", description: "We bring innovative and creative solutions to solve complex challenges and drive growth." },
-              { icon: "🤝", title: "Trusted Team", description: "Our experienced and reliable team partners with you to ensure success every step of the way." }
-
+              {
+                icon: "⚡",
+                title: "Speedy Service",
+                description:
+                  "We deliver fast and efficient solutions to meet your business needs without compromising quality.",
+              },
+              {
+                icon: "🎯",
+                title: "Targeted Support",
+                description:
+                  "Our team provides precise and personalized support to help you achieve your goals effectively.",
+              },
+              {
+                icon: "💡",
+                title: "Bright Ideas",
+                description:
+                  "We bring innovative and creative solutions to solve complex challenges and drive growth.",
+              },
+              {
+                icon: "🤝",
+                title: "Trusted Team",
+                description:
+                  "Our experienced and reliable team partners with you to ensure success every step of the way.",
+              },
             ].map((f, i) => (
               <div key={i} className="fcard">
-                <h3 className="mt-3">{f.icon} {f.title}</h3>
+                <h3 className="mt-3">
+                  {f.icon} {f.title}
+                </h3>
                 <p>{f.description}</p>
               </div>
             ))}
@@ -189,7 +200,10 @@ const Home = () => {
 
           <div className="enquiry-box">
             <h2>Free Enquiry</h2>
-            <span>Submit your details and our team at Global IT Services will get back to you with a tailored solution for your business needs.</span>
+            <span>
+              Submit your details and our team at Global IT Services will get
+              back to you with a tailored solution for your business needs.
+            </span>
             <form ref={formRef} onSubmit={sendEmail} className="form">
               <input
                 type="text"
@@ -233,6 +247,7 @@ const Home = () => {
         </div>
       </div>
 
+      {/* ===== SLIDES ===== */}
       <div className="switcher-section">
         <h2>We offer the best services for you</h2>
         <div className="slide-display">
@@ -245,8 +260,9 @@ const Home = () => {
             <h3>{slides[active].point4}</h3>
             <h3>{slides[active].point5}</h3>
           </div>
-          <div className="slide_img_col" >
-            <img src={slides[active].img}
+          <div className="slide_img_col">
+            <img
+              src={slides[active].img}
               alt={slides[active].title}
               className="slide-image"
             />
@@ -255,9 +271,13 @@ const Home = () => {
 
         <div className="nav-row">
           <button
-            className="nav-btn" onClick={() =>
-              setActive((prev) => (prev - 1 + slides.length) % slides.length)}>
-            ◄</button>
+            className="nav-btn"
+            onClick={() =>
+              setActive((prev) => (prev - 1 + slides.length) % slides.length)
+            }
+          >
+            ◄
+          </button>
 
           <span className="slide-counter">
             {active + 1} / {slides.length}
@@ -265,7 +285,8 @@ const Home = () => {
 
           <button
             className="nav-btn"
-            onClick={() => setActive((prev) => (prev + 1) % slides.length)}>
+            onClick={() => setActive((prev) => (prev + 1) % slides.length)}
+          >
             ►
           </button>
         </div>

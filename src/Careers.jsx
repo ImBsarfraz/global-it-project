@@ -41,7 +41,7 @@ const Careers = () => {
         <>
             <div className='career-header text-center'>
                 <div className="career-header-overlay">
-                    <ul>
+                    <ul className='mt-5 mt-md-5'>
                         <li><Link to="/" className='nav-link'>Home </Link></li>
                         <li>-</li>
                         <li>Careers</li>
@@ -54,10 +54,10 @@ const Careers = () => {
             <div className="conatiner-fluid p-5">
                 <div className="row">
                     <div className="col-md-6">
-                        <img src={career1} alt="career-img" />
+                        <img src={career1} width={"100%"} alt="career-img" />
                     </div>
                     <div className="col-md-6">
-                        <h5 className='text-info'>
+                        <h5 className='text-info mt-5 mt-md-0'>
                             Careers at Global IT Services -
                         </h5>
                         <h1>
@@ -113,7 +113,7 @@ const Careers = () => {
                         </span>
                     </div>
                     <div className="col-md-6 mt-5">
-                        <img src={career2} alt="career-image" />
+                        <img src={career2} width={"100%"} alt="career-image" />
                     </div>
                 </div>
             </div>

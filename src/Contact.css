@@ -1,45 +1,59 @@
-* {
+/* Reset */
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+/* Section background */
 .enroll-section {
   background-image: url(./assets/unnamed.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 83.7vh;
+  min-height: 100vh; /* full height */
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   padding: 20px;
   font-family: Arial, sans-serif;
-}
-
-.enroll-section h2 {
   text-align: center;
-  color: #242424;
-  font-size: 32px;
-  margin-bottom: 30px;
 }
 
+/* Heading */
+.enroll-section h2 {
+  color: rgb(52, 75, 82);
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+/* Paragraph */
+.enroll-section p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+/* Form */
 .enroll-form {
   background: #fff;
-  width: 90%;
+  width: 100%;
   max-width: 520px;
-  padding: 30px 25px;
+  padding: 25px 20px;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
+  gap: 15px;
 }
 
 .enroll-form input,
 .enroll-form textarea {
   width: 100%;
   padding: 12px 14px;
-  margin-bottom: 18px;
   border: 1px solid #aca8a8;
   border-radius: 6px;
   font-size: 16px;
@@ -51,6 +65,7 @@
   min-height: 100px;
 }
 
+/* Button */
 .enroll-form button {
   background: rgb(0, 161, 153);
   color: #fff;
@@ -59,40 +74,25 @@
   font-size: 18px;
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .enroll-form button:hover {
-  background-color: #ff800000;
+  background: #fff;
   color: rgb(0, 161, 153);
-  border: 3px solid  rgb(0, 161, 153);
+  border: 2px solid rgb(0, 161, 153);
 }
 
-/* ----- Responsive Breakpoints ----- */
-
-/* Tablets and small laptops */
-@media (max-width: 992px) {
-  .enroll-section h2 {
-    font-size: 28px;
-    margin-bottom: 24px;
-  }
-  .enroll-form {
-    padding: 25px 20px;
-  }
-}
-
-/* Large phones and portrait tablets */
+/* Responsive tweaks */
 @media (max-width: 768px) {
-  .enroll-section {
-    padding: 15px;
-    height: auto;
-  }
   .enroll-section h2 {
     font-size: 26px;
   }
+  .enroll-section p {
+    font-size: 15px;
+  }
   .enroll-form {
-    width: 95%;
-    padding: 20px 18px;
+    padding: 20px 15px;
   }
   .enroll-form input,
   .enroll-form textarea {
@@ -104,14 +104,16 @@
   }
 }
 
-/* Small phones */
 @media (max-width: 480px) {
   .enroll-section h2 {
     font-size: 22px;
   }
+  .enroll-section p {
+    font-size: 14px;
+  }
   .enroll-form {
     width: 100%;
-    padding: 18px 15px;
+    padding: 15px;
   }
   .enroll-form input,
   .enroll-form textarea {
