@@ -155,6 +155,23 @@ const Embedded = () => {
   const [active, setActive] = useState(1);
   const activeService = services.find((s) => s.id === active);
 
+  // Helper function to render a single set of tabs
+  const renderTabs = (keySuffix) => (
+    services.map((service) => (
+      <div
+        // IMPORTANT: Ensure keys are unique across all rendered elements, especially the duplicated set
+        key={`${service.id}-${keySuffix}`}
+        className={`tab ${active === service.id ? "active" : ""}`}
+        onClick={() => setActive(service.id)}
+      >
+        <span className="tab-number">
+          {service.id.toString().padStart(2, "0")}
+        </span>
+        <span>{service.heading}</span>
+      </div>
+    ))
+  );
+
   return (
     <>
       <div className="banner">
@@ -197,20 +214,13 @@ const Embedded = () => {
             ))}
         </div>
 
-        <div className="services-tabs">
-          {services.map((service) => (
-            <div
-              key={service.id}
-              className={`tab ${active === service.id ? "active" : ""}`}
-              onClick={() => setActive(service.id)}
-            >
-              <span className="tab-number">
-                {service.id.toString().padStart(2, "0")}
-              </span>
-              <span>{service.heading}</span>
-            </div>
-          ))}
+        <div className="tabs-wrapper"> 
+          <div className="services-tabs">
+            {renderTabs('original')}
+            {renderTabs('duplicate')}
+          </div>
         </div>
+        
       </div>
     </>
   );

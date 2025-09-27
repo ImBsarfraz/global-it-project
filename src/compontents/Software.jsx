@@ -3,6 +3,7 @@ import "./css/Service_page.css";
 import { Link } from "react-router-dom";
 import cntimage from '../assets/servicecnt.png';
 
+// Service data remains unchanged
 const services = [
   {
     id: 1,
@@ -173,8 +174,25 @@ const Software = () => {
   const [active, setActive] = useState(1);
   const activeService = services.find((s) => s.id === active);
 
+  // Helper function to render a single set of tabs
+  const renderTabs = () => (
+    services.map((service) => (
+      <div
+        key={service.id}
+        className={`tab ${active === service.id ? "active" : ""}`}
+        onClick={() => setActive(service.id)}
+      >
+        <span className="tab-number">
+          {service.id.toString().padStart(2, "0")}
+        </span>
+        <span>{service.heading}</span>
+      </div>
+    ))
+  );
+
   return (
     <>
+      {/* Banner section remains unchanged */}
       <div className="banner">
         <h1>Software Development Services</h1>
         <p>
@@ -187,6 +205,7 @@ const Software = () => {
       </div>
 
       <div className="services-container container">
+        {/* Services Content remains unchanged */}
         <div className="services-content">
           <div className="d-flex">
             <div className="servuice_img">
@@ -215,20 +234,13 @@ const Software = () => {
             ))}
         </div>
 
-        <div className="services-tabs">
-          {services.map((service) => (
-            <div
-              key={service.id}
-              className={`tab ${active === service.id ? "active" : ""}`}
-              onClick={() => setActive(service.id)}
-            >
-              <span className="tab-number">
-                {service.id.toString().padStart(2, "0")}
-              </span>
-              <span>{service.heading}</span>
-            </div>
-          ))}
+        <div className="tabs-wrapper"> 
+          <div className="services-tabs">
+            {renderTabs()}
+            {renderTabs()}
+          </div>
         </div>
+        
       </div>
     </>
   );
